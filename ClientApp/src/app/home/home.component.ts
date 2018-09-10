@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
  
   airports: any;
   airportId: number;
+  selectedAirport: number;
+
   constructor(private readonly airlineService: AirlineService)
   { }
 
@@ -26,6 +28,8 @@ export class HomeComponent implements OnInit {
   }
 
   selectName() {
+    this.selectedAirport = null;
+
     alert(this.airportId);
   }
 }

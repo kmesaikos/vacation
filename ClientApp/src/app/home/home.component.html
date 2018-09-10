@@ -1,16 +1,33 @@
 <h1>Hello, world!</h1>
 <p>Welcome to your new single-page application, built with:</p>
 
+<div class="box-header with-border">
+  <div class="form-group voffset row">
+    <label for="" class="vertical-label col-sm-4 col-md-8 text-right"> Select Name</label>
+    <div class="col-sm-8 col-md-4">
+      <select (change)="selectName();">
+        <option value="0">--All--</option>
+        <option *ngFor="let airport of airports" value={{airport}}>
+          {{airport.nameAirport}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+
+
 <div class="box-header with-border">  
   <div class="form-group voffset row">  
     <label for="" class="vertical-label col-sm-4 col-md-8 text-right"> Select Name</label>  
     <div class="col-sm-8 col-md-4">  
-      <select id="Id" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="airportId" name="Id" (change)="selectName();">  
-        <option selected="" value=""></option>  
-        <option [ngValue]="airport.Id" *ngFor="let airport of data">  
-          {{aiport.nameAirport}}  
-        </option>  
+      <select id="Id" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="airportId" name="Id" (change)="selectName();">
+        <option value="0">--All--</option>
+        <option [ngValue]="k.airportId" *ngFor="let k of airports">
+          {{k.nameAirport}}
+        </option>
       </select>  
     </div>  
   </div>  
-</div> 
+</div>  
